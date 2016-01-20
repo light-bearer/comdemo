@@ -1,0 +1,148 @@
+@charset 'utf-8';
+
+$base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
+// $base-font-size: 32px; //design iphone3gs: 320px / 10 = 32px
+// $base-font-size: 64px; //design iphone4/5: 320px * 2 / 10 = 64px
+// $base-font-size: 124.2px; //design iphone6: 414px * 3 / 10 = 124.2px;
+
+
+@function pxToRem($px) {
+	@return  $px / $base-font-size * 1rem;
+}
+@mixin pxToPx($name,$px) {
+	#{$name}: round($px / 2) * 1px;
+    [data-dpr="2"] & {
+        #{$name}: $px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+        #{$name}: round($px * 2.5 / 2) * 1px; 
+    }
+    // for xiaomi note
+    [data-dpr="2.75"] & {
+        #{$name}: round($px * 2.75 / 2) * 1px;
+    }
+    [data-dpr="3"] & {
+        #{$name}: round($px * 3 / 2 ) * 1px;
+    }
+    // for sumsang note4
+    [data-dpr="4"] & {
+        #{$name}: $px * 2px;
+    }
+}
+.list {
+    background-color: #fff;
+    padding: pxToRem(20px);
+    @include pxToPx(font-size, 36);
+    color: #000;
+}
+
+.item {
+    width: pxToPx(750px);
+    height: pxToPx(150px);
+    display: flex;
+    display: -webkit-flex;
+    border: 1px solid #ddd;
+    border-radius: pxToRem(5px);
+    &>div:first-child {
+        width: 20%;
+        i {
+            width: pxToRem(100px);
+            height: pxToRem(100px);
+            background-image: url(../img/avatar-test.png);
+            background-size: contain;
+            display: inline-block;
+            border-radius: pxToRem(100px);
+            margin: pxToRem(25px);
+        }
+    }
+    &>div:last-child {
+        width: flex;
+        line-height: pxToRem(150px);
+    }
+}
+.ball {
+    width: pxToRem(55px);
+    height: pxToRem(43px);
+    display: inline-block;
+    background-image: url('../img/ball@2x.png');
+    background-size: contain;
+    margin-top: pxToRem(40px);
+}
+.imgcont {
+    width: 100%;
+    height: pxToRem(300px);
+    border-bottom: 1px solid #ddd;
+}
+.btn {
+    width: pxToRem(200px);
+    height: pxToRem(100px);
+    line-height: pxToRem(100px);
+    background-color: #33D0EC;
+    font-size: pxToRem(36px);
+    text-align: center;
+    margin: auto;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: pxToRem(30px);
+}
+
+
+.oralist {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    color: #000;
+
+}
+
+.oraitem {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    display: -webkit-flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    &>div:first-child {
+        width: 20%;
+        i {
+            width: 50px;
+            height: 50px;
+            background-image: url(../img/avatar-test.png);
+            background-size: contain;
+            display: inline-block;
+            border-radius: 50px;
+            margin: 12px;
+        }
+    }
+    &>div:last-child {
+        width: flex;
+        line-height: 75px;
+    }
+}
+.oraball {
+    width: 28px;
+    height: 22px;
+    display: inline-block;
+    background-image: url('../img/ball@2x.png');
+    background-size: contain;
+    margin-top: 20px;
+}
+.oraimgcont {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #ddd;
+}
+
+.orabtn {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #33D0EC;
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+}
