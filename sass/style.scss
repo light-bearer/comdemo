@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-$base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
+// $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
 // $base-font-size: 32px; //design iphone3gs: 320px / 10 = 32px
-// $base-font-size: 64px; //design iphone4/5: 320px * 2 / 10 = 64px
+$base-font-size: 64px; //design iphone4/5: 320px * 2 / 10 = 64px
 // $base-font-size: 124.2px; //design iphone6: 414px * 3 / 10 = 124.2px;
 
 
@@ -30,6 +30,9 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
         #{$name}: $px * 2px;
     }
 }
+body {
+    margin: 0 !important;
+}
 .list {
     background-color: #fff;
     padding: pxToRem(20px);
@@ -39,13 +42,13 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
 
 .item {
     width: pxToPx(750px);
-    height: pxToPx(150px);
+    height: pxToPx(100px);
     display: flex;
     display: -webkit-flex;
     border: 1px solid #ddd;
     border-radius: pxToRem(5px);
     &>div:first-child {
-        width: 20%;
+        width: 5%;
         i {
             width: pxToRem(100px);
             height: pxToRem(100px);
@@ -58,7 +61,7 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
     }
     &>div:last-child {
         width: flex;
-        line-height: pxToRem(150px);
+        line-height: pxToRem(100px);
     }
 }
 .ball {
@@ -71,19 +74,27 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
 }
 .imgcont {
     width: 100%;
-    height: pxToRem(300px);
+    height: pxToRem(400px);
     border-bottom: 1px solid #ddd;
+}
+.banner {
+    width: 100%;
+    height: pxToRem(256px);
+    display: inline-block;
+    background-image: url('../img/banner@2x.png');
+    background-size: contain;
+    margin-top: pxToRem(40px);
 }
 .btn {
     width: pxToRem(200px);
     height: pxToRem(100px);
     line-height: pxToRem(100px);
     background-color: #33D0EC;
-    font-size: pxToRem(36px);
+    font-size: pxToRem(32px);
     text-align: center;
     margin: auto;
     color: #fff;
-    border-radius: 5px;
+    border-radius: pxToRem(10px);
     margin-top: pxToRem(30px);
 }
 
@@ -98,13 +109,13 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
 
 .oraitem {
     width: 100%;
-    height: 75px;
+    height: 50px;
     display: flex;
     display: -webkit-flex;
     border: 1px solid #ddd;
     border-radius: 5px;
     &>div:first-child {
-        width: 20%;
+        width: 5%;
         i {
             width: 50px;
             height: 50px;
@@ -117,7 +128,7 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
     }
     &>div:last-child {
         width: flex;
-        line-height: 75px;
+        line-height: 50px;
     }
 }
 .oraball {
@@ -130,8 +141,16 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
 }
 .oraimgcont {
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-bottom: 1px solid #ddd;
+}
+.orabanner {
+    width: 100%;
+    height: 128px;
+    display: inline-block;
+    background-image: url('../img/banner@1x.png');
+    background-size: contain;
+    margin-top: 20px;
 }
 
 .orabtn {
@@ -139,7 +158,7 @@ $base-font-size: 75px; //design iphone6: 375px * 2 / 10 = 75px; --design
     height: 50px;
     line-height: 50px;
     background-color: #33D0EC;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     margin: auto;
     color: #fff;
